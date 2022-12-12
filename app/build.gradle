@@ -2,6 +2,8 @@ plugins {
     id 'java'
     id 'se.patrikerdes.use-latest-versions' version '0.2.18'
     id 'com.github.ben-manes.versions' version '0.41.0'
+    id 'application'
+    id 'java-library'
 }
 
 group 'hexlet.code'
@@ -18,4 +20,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClass = 'hexlet.code.App'
+}
+compileJava {
+    options.release = 17
 }
