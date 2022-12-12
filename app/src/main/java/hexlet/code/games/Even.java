@@ -1,13 +1,10 @@
-package hexlet.code;
+package hexlet.code.games;
 
+import hexlet.code.Greet;
+import hexlet.code.Engine;
 import java.util.Scanner;
-import java.util.Random;
 
 public class Even {
-    public static int getRandomInt() { // метод для получения случайного числа в диапазоне
-        Random randomInt = new Random();
-        return randomInt.nextInt(1000);
-    }
 
     public static void playGame() {
         Greet.greeting();
@@ -22,18 +19,18 @@ public class Even {
 
         while (indexRight < 3 && indexWrong < 1) {
 
-            int random = Even.getRandomInt();
+            int random = Engine.getRandomInt(1000);
             System.out.println("Question: " + random);
             System.out.println("Your answer: ");
             String answer = sc.nextLine();
-            String rightAnswer = " ";
+            String result = " ";
 
             // собираю верный ответ для сообщения об ошибке
 
             if (random % 2 == 0) {
-                rightAnswer = "yes";
+                result = "yes";
             } else {
-                rightAnswer = "no";
+                result = "no";
             }
 
             //анализирую ответы
@@ -42,7 +39,7 @@ public class Even {
                 System.out.println("Correct!");
                 indexRight = indexRight + 1;
             } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + rightAnswer + "'.");
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
                 Greet.tryAgain();
                 indexWrong = indexWrong + 1;
             }
