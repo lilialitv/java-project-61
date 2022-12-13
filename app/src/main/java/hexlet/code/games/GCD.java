@@ -31,10 +31,10 @@ public class GCD {
                 Greet.tryAgain();
                 indexWrong = indexWrong + 1;
             }
-
             if (indexRight == 3) {
                 Greet.congratulate();
             }
+
         }
     }
 }

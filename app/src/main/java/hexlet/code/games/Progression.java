@@ -1,35 +1,34 @@
 package hexlet.code.games;
 
-import hexlet.code.Greet;
 import hexlet.code.Engine;
+import hexlet.code.Greet;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Calc {
+public class Progression {
     public static void playGame() {
         Greet.greeting();
         Scanner sc = new Scanner(System.in);
-        System.out.println("What is the result of the expression?");
+        System.out.println("What number is missing in the progression?");
 
         int indexRight = 0;
         int indexWrong = 0;
 
         while (indexRight < 3 && indexWrong < 1) {
-            int number1 = Engine.getRandomInt(100);
-            int number2 = Engine.getRandomInt(100);
-            char operation = Engine.getRandomOperation("-+*");
-            int result = 0;
-
-            System.out.println("Question: " + number1 + operation + number2);
+            int[] seq = Engine.getSequence();
+            int missing = Engine.getRandomInt(9);
+            missing = Math.abs(missing);
+            int result = seq[missing];
+            seq[missing] = 555;
+            String numbers = Arrays.toString(seq);
+            numbers = numbers.replace("555", "..")
+                    .replace(",", "")
+                    .replace("[", "")
+                    .replace("]", "")
+                    .trim();
+            System.out.println("Question is: " + numbers);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
-
-            if (operation == '+') {
-                result = number1 + number2;
-            } else if (operation == '-') {
-                result = number1 - number2;
-            } else if (operation == '*') {
-                result = number1 * number2;
-            }
 
             if (answer == result) {
                 System.out.println("Correct!");
@@ -39,11 +38,9 @@ public class Calc {
                 Greet.tryAgain();
                 indexWrong = indexWrong + 1;
             }
-
-            if (indexRight == 3) {
-                Greet.congratulate();
-            }
-
+        }
+        if (indexRight == 3) {
+            Greet.congratulate();
         }
     }
 }
