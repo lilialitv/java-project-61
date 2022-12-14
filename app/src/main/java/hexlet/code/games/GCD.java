@@ -12,9 +12,8 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int indexRight = 0;
-        int indexWrong = 0;
 
-        while (indexRight < 3 && indexWrong < 1) {
+        while (indexRight < 3) {
             int number1 = Engine.getRandomInt(100);
             int number2 = Engine.getRandomInt(100);
 
@@ -23,18 +22,13 @@ public class GCD {
             int answer = sc.nextInt();
             int result = Engine.getNod(number1, number2);
 
-            if (answer == result) {
-                System.out.println("Correct!");
-                indexRight = indexRight + 1;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-                Greet.tryAgain();
-                indexWrong = indexWrong + 1;
-            }
-            if (indexRight == 3) {
-                Greet.congratulate();
-            }
+            Engine.checkNumber(answer, result);
+            indexRight++;
+        }
 
+        if (indexRight == 3) {
+            Greet.congratulate();
         }
     }
 }
+

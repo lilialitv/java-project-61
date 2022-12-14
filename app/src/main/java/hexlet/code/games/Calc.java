@@ -11,9 +11,8 @@ public class Calc {
         System.out.println("What is the result of the expression?");
 
         int indexRight = 0;
-        int indexWrong = 0;
 
-        while (indexRight < 3 && indexWrong < 1) {
+        while (indexRight < 3) {
             int number1 = Engine.getRandomInt(100);
             int number2 = Engine.getRandomInt(100);
             char operation = Engine.getRandomOperation("-+*");
@@ -31,14 +30,8 @@ public class Calc {
                 result = number1 * number2;
             }
 
-            if (answer == result) {
-                System.out.println("Correct!");
-                indexRight = indexRight + 1;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-                Greet.tryAgain();
-                indexWrong = indexWrong + 1;
-            }
+            Engine.checkNumber(answer, result);
+            indexRight++;
 
             if (indexRight == 3) {
                 Greet.congratulate();

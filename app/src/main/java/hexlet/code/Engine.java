@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class Engine {
@@ -22,12 +21,30 @@ public class Engine {
         return getNod(number2, number1 % number2);
     }
 
+    public static void checkYesOrNo(String answer, String result) {
+        if (result.equals(answer)) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
+            Greet.tryAgain();
+            System.exit(0);
+        }
+    }
+
+    public static void checkNumber(int answer, int result) {
+        if (result == answer) {
+            System.out.println("Correct!");
+        } else {
+            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
+            Greet.tryAgain();
+            System.exit(0);
+        }
+    }
+
     public static int[] getSequence() {
         int dif = getRandomInt(7);
         if (dif == 0) {
             dif = dif + 1;
-        } else {
-            dif = dif;
         }
         int[] sequence = new int[10];
         sequence[0] = getRandomInt(99);

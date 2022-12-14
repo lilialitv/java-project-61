@@ -12,9 +12,8 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int indexRight = 0;
-        int indexWrong = 0;
 
-        while (indexRight < 3 && indexWrong < 1) {
+        while (indexRight < 3) {
             int[] seq = Engine.getSequence();
             int missing = Engine.getRandomInt(9);
             missing = Math.abs(missing);
@@ -30,14 +29,8 @@ public class Progression {
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
 
-            if (answer == result) {
-                System.out.println("Correct!");
-                indexRight = indexRight + 1;
-            } else {
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-                Greet.tryAgain();
-                indexWrong = indexWrong + 1;
-            }
+            Engine.checkNumber(answer, result);
+            indexRight++;
         }
         if (indexRight == 3) {
             Greet.congratulate();
