@@ -54,9 +54,9 @@ public class Engine {
             dif = dif + 1;
         }
         int[] sequence = new int[10];
-        sequence[0] = getRandomInt(99);
+        sequence[0] = getRandomInt();
         char operation = getRandomOperation("-+");
-        for (var i = 1; i < 10; i++) {
+        for (var i = 1; i < sequence.length; i++) {
             if (operation == '-') {
                 sequence[i] = sequence[i - 1] - dif;
             } else if (operation == '+') {

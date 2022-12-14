@@ -16,13 +16,13 @@ public class Progression {
 
         while (indexRight < max) {
             int[] seq = Engine.getSequence();
-            int length = seq.length;
+            int length = seq.length - 1;
             int missing = Engine.getRandomInt(length);
             missing = Math.abs(missing);
             int result = seq[missing];
-            String toReplace = " " + seq[missing];
-            String numbers = Arrays.toString(seq);
-            numbers = numbers.replace(toReplace, " ..")
+            String toReplace = String.valueOf(seq[missing]);
+            String numbers = " " + Arrays.toString(seq);
+            numbers = numbers.replace(toReplace, "..")
                     .replace(",", "")
                     .replace("[", "")
                     .replace("]", "")
