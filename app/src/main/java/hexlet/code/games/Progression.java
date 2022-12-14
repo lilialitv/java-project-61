@@ -29,9 +29,6 @@ public class Progression {
             System.out.println("Question:" + numbers);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
-            //String answer2 = sc.nextLine();
-            //String result2 = Integer.toString(result);
-            //Engine.checkYesOrNo(answer2, result2);
 
             Engine.checkNumber(answer, result);
             indexRight++;
