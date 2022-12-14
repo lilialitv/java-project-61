@@ -7,9 +7,10 @@ public class Engine {
         Random randomInt = new Random();
         return randomInt.nextInt(limit);
     }
+    private static final int DEFAULT = 100;
     public static int getRandomInt() {
         Random randomInt = new Random();
-        return randomInt.nextInt(100);
+        return randomInt.nextInt(DEFAULT);
     }
 
     public static char getRandomOperation(String string) {
@@ -46,13 +47,13 @@ public class Engine {
             fail();
         }
     }
-
+    private static final int ARRAY = 10;
     public static int[] getSequence() {
-        int dif = getRandomInt(10);
+        int dif = getRandomInt(ARRAY);
         if (dif == 0) {
             dif = dif + 1;
         }
-        int[] sequence = new int[10];
+        int[] sequence = new int[ARRAY];
         sequence[0] = getRandomInt();
         char operation = getRandomOperation("-+");
         for (var i = 1; i < sequence.length; i++) {
