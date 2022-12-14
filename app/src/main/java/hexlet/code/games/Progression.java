@@ -26,7 +26,7 @@ public class Progression {
                     .replace("[", " ")
                     .replace("]", " ")
                     .replace(toReplace, " .. ");
-            System.out.println("Question: " + numbers);
+            System.out.println("Question:" + numbers);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
             //String answer2 = sc.nextLine();
