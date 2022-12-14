@@ -18,7 +18,7 @@ public class Calc {
             char operation = Engine.getRandomOperation("-+*");
             int result = 0;
 
-            System.out.println("Question: " + number1 + operation + number2);
+            System.out.println("Question: " + number1 + " " + operation + " " + number2);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
 
