@@ -12,15 +12,17 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
 
         int indexRight = 0;
+        int max = 3;
 
-        while (indexRight < 3) {
+        while (indexRight < max) {
             int[] seq = Engine.getSequence();
-            int missing = Engine.getRandomInt(9);
+            int length = seq.length;
+            int missing = Engine.getRandomInt(length);
             missing = Math.abs(missing);
             int result = seq[missing];
-            seq[missing] = 555;
+            String toReplace = Integer.toString(seq[missing]);
             String numbers = Arrays.toString(seq);
-            numbers = numbers.replace("555", "..")
+            numbers = numbers.replace(toReplace, "..")
                     .replace(",", "")
                     .replace("[", "")
                     .replace("]", "")
@@ -32,7 +34,7 @@ public class Progression {
             Engine.checkNumber(answer, result);
             indexRight++;
         }
-        if (indexRight == 3) {
+        if (indexRight == max) {
             Greet.congratulate();
         }
     }

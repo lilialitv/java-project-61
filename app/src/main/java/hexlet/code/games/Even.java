@@ -12,10 +12,11 @@ public class Even {
         Scanner sc = new Scanner(System.in);
 
         var indexRight = 0;
+        int max = 3;
 
-        while (indexRight < 3) {
+        while (indexRight < max) {
 
-            int random = Engine.getRandomInt(1000);
+            int random = Engine.getRandomInt();
             System.out.println("Question: " + random);
             System.out.println("Your answer: ");
             String answer = sc.nextLine();
@@ -34,7 +35,7 @@ public class Even {
         }
         //поздравляю после трех верных ответов
 
-        if (indexRight == 3) {
+        if (indexRight == max) {
             Greet.congratulate();
         }
     }

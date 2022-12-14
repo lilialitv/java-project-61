@@ -12,9 +12,10 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
         int indexRight = 0;
+        int max = 3;
 
-        while (indexRight < 3) {
-            int random = Engine.getRandomInt(50);
+        while (indexRight < max) {
+            int random = Engine.getRandomInt();
             System.out.println("Question: " + random);
             System.out.println("Your answer: ");
             String answer = sc.nextLine();
@@ -29,7 +30,7 @@ public class Prime {
             Engine.checkYesOrNo(answer, result);
             indexRight++;
 
-            if (indexRight == 3) {
+            if (indexRight == max) {
                 Greet.congratulate();
             }
         }

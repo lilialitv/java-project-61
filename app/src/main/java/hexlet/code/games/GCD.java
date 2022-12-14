@@ -12,10 +12,11 @@ public class GCD {
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int indexRight = 0;
+        int max = 3;
 
-        while (indexRight < 3) {
-            int number1 = Engine.getRandomInt(100);
-            int number2 = Engine.getRandomInt(100);
+        while (indexRight < max) {
+            int number1 = Engine.getRandomInt();
+            int number2 = Engine.getRandomInt();
 
             System.out.println("Question: " + number1 + " " + number2);
             System.out.println("Your answer: ");
@@ -26,7 +27,7 @@ public class GCD {
             indexRight++;
         }
 
-        if (indexRight == 3) {
+        if (indexRight == max) {
             Greet.congratulate();
         }
     }

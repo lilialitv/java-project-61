@@ -7,6 +7,11 @@ public class Engine {
         Random randomInt = new Random();
         return randomInt.nextInt(limit);
     }
+    public static int getRandomInt() {
+        Random randomInt = new Random();
+        int max = 100;
+        return randomInt.nextInt(max);
+    }
 
     public static char getRandomOperation(String string) {
         Random randomChar = new Random();

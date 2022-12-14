@@ -13,8 +13,8 @@ public class Calc {
         int indexRight = 0;
 
         while (indexRight < 3) {
-            int number1 = Engine.getRandomInt(100);
-            int number2 = Engine.getRandomInt(100);
+            int number1 = Engine.getRandomInt();
+            int number2 = Engine.getRandomInt();
             char operation = Engine.getRandomOperation("-+*");
             int result = 0;
 
