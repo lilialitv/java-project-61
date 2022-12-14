@@ -20,13 +20,12 @@ public class Progression {
             int missing = Engine.getRandomInt(length);
             missing = Math.abs(missing);
             int result = seq[missing];
-            String toReplace = String.valueOf(seq[missing]);
-            String numbers = " " + Arrays.toString(seq);
-            numbers = numbers.replace(toReplace, "..")
-                    .replace(",", "")
+            String toReplace = " " + String.valueOf(seq[missing]) + " ";
+            String numbers = Arrays.toString(seq);
+            numbers = numbers.replace(",", "")
                     .replace("[", "")
                     .replace("]", "")
-                    .trim();
+                    .replace(toReplace, " .. ");
             System.out.println("Question: " + numbers);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();

@@ -48,7 +48,7 @@ public class Engine {
     }
 
     public static int[] getSequence() {
-        int dif = getRandomInt();
+        int dif = getRandomInt(10);
         if (dif == 0) {
             dif = dif + 1;
         }
