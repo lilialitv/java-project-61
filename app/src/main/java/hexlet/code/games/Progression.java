@@ -20,9 +20,9 @@ public class Progression {
             int missing = Engine.getRandomInt(length);
             missing = Math.abs(missing);
             int result = seq[missing];
-            String toReplace = Integer.toString(seq[missing]);
+            String toReplace = " " + Integer.toString(seq[missing]) + " ";
             String numbers = Arrays.toString(seq);
-            numbers = numbers.replace(toReplace, "..")
+            numbers = numbers.replace(toReplace, " .. ")
                     .replace(",", "")
                     .replace("[", "")
                     .replace("]", "")
