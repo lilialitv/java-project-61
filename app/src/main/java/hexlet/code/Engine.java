@@ -21,13 +21,16 @@ public class Engine {
         return getNod(number2, number1 % number2);
     }
 
+    public static void fail() {
+        Greet.tryAgain();
+        System.exit(0);
+    }
     public static void checkYesOrNo(String answer, String result) {
         if (result.equals(answer)) {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            Greet.tryAgain();
-            System.exit(0);
+            fail();
         }
     }
 
@@ -36,8 +39,7 @@ public class Engine {
             System.out.println("Correct!");
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            Greet.tryAgain();
-            System.exit(0);
+            fail();
         }
     }
 
