@@ -6,15 +6,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Progression {
+    private static final double MAX = 3;
     public static void playGame() {
         Greet.greeting();
         Scanner sc = new Scanner(System.in);
         System.out.println("What number is missing in the progression?");
 
         int indexRight = 0;
-        int max = 3;
 
-        while (indexRight < max) {
+        while (indexRight < MAX) {
             int[] seq = Engine.getSequence();
             int length = seq.length - 1;
             int missing = Engine.getRandomInt(length);
@@ -34,7 +34,7 @@ public class Progression {
             Engine.checkNumber(answer, result);
             indexRight++;
         }
-        if (indexRight == max) {
+        if (indexRight == MAX) {
             Greet.congratulate();
         }
     }

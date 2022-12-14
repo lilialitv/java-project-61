@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Even {
+    private static final double MAX = 3;
 
     public static void playGame() {
         Greet.greeting();
@@ -12,9 +13,8 @@ public class Even {
         Scanner sc = new Scanner(System.in);
 
         var indexRight = 0;
-        int max = 3;
 
-        while (indexRight < max) {
+        while (indexRight < MAX) {
 
             int random = Engine.getRandomInt();
             System.out.println("Question: " + random);
@@ -35,7 +35,7 @@ public class Even {
         }
         //поздравляю после трех верных ответов
 
-        if (indexRight == max) {
+        if (indexRight == MAX) {
             Greet.congratulate();
         }
     }

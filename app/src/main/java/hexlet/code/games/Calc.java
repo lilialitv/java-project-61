@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 import java.util.Scanner;
 
 public class Calc {
+    private static final double MAX = 3;
     public static void playGame() {
         Greet.greeting();
         Scanner sc = new Scanner(System.in);
@@ -12,7 +13,7 @@ public class Calc {
 
         int indexRight = 0;
 
-        while (indexRight < 3) {
+        while (indexRight < MAX) {
             int number1 = Engine.getRandomInt();
             int number2 = Engine.getRandomInt();
             char operation = Engine.getRandomOperation("-+*");
@@ -33,7 +34,7 @@ public class Calc {
             Engine.checkNumber(answer, result);
             indexRight++;
 
-            if (indexRight == 3) {
+            if (indexRight == MAX) {
                 Greet.congratulate();
             }
 

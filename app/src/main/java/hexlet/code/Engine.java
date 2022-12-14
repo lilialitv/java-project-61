@@ -9,8 +9,7 @@ public class Engine {
     }
     public static int getRandomInt() {
         Random randomInt = new Random();
-        int max = 100;
-        return randomInt.nextInt(max);
+        return randomInt.nextInt(100);
     }
 
     public static char getRandomOperation(String string) {
@@ -49,7 +48,7 @@ public class Engine {
     }
 
     public static int[] getSequence() {
-        int dif = getRandomInt(7);
+        int dif = getRandomInt();
         if (dif == 0) {
             dif = dif + 1;
         }

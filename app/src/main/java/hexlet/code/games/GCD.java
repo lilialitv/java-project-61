@@ -6,15 +6,15 @@ import hexlet.code.Greet;
 import java.util.Scanner;
 
 public class GCD {
+    private static final double MAX = 3;
     public static void playGame() {
         Greet.greeting();
         Scanner sc = new Scanner(System.in);
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int indexRight = 0;
-        int max = 3;
 
-        while (indexRight < max) {
+        while (indexRight < MAX) {
             int number1 = Engine.getRandomInt();
             int number2 = Engine.getRandomInt();
 
@@ -27,7 +27,7 @@ public class GCD {
             indexRight++;
         }
 
-        if (indexRight == max) {
+        if (indexRight == MAX) {
             Greet.congratulate();
         }
     }
