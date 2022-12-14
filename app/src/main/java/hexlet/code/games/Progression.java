@@ -23,12 +23,16 @@ public class Progression {
             String toReplace = " " + String.valueOf(seq[missing]) + " ";
             String numbers = Arrays.toString(seq);
             numbers = numbers.replace(",", "")
-                    .replace("[", "")
-                    .replace("]", "")
+                    .replace("[", " ")
+                    .replace("]", " ")
                     .replace(toReplace, " .. ");
             System.out.println("Question: " + numbers);
+            System.out.println(toReplace);
             System.out.println("Your answer: ");
             int answer = sc.nextInt();
+            //String answer2 = sc.nextLine();
+            //String result2 = Integer.toString(result);
+            //Engine.checkYesOrNo(answer2, result2);
 
             Engine.checkNumber(answer, result);
             indexRight++;
