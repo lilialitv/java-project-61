@@ -1,6 +1,8 @@
 package hexlet.code;
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Engine {
     public static int getRandomInt(int limit) {
@@ -11,6 +13,20 @@ public class Engine {
     public static int getRandomInt() {
         Random randomInt = new Random();
         return randomInt.nextInt(DEFAULT);
+    }
+    public static String count(int number1, int number2, char operation) {
+        int result = 0;
+        if (operation == '+') {
+            result = number1 + number2;
+        } else if (operation == '-') {
+            result = number1 - number2;
+        } else if (operation == '*') {
+            result = number1 * number2;
+        }
+        return Integer.toString(result);
+    }
+    public static String formQuestion(int number1, int number2, char operation) {
+        return ("Question: " + number1 + " " + operation + " " + number2);
     }
 
     public static char getRandomOperation(String string) {
@@ -30,21 +46,14 @@ public class Engine {
         Greet.tryAgain();
         System.exit(0);
     }
-    public static void checkYesOrNo(String answer, String result) {
+    public static boolean check(String answer, String result) {
         if (result.equals(answer)) {
             System.out.println("Correct!");
+            return true;
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
             fail();
-        }
-    }
-
-    public static void checkNumber(int answer, int result) {
-        if (result == answer) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            fail();
+            return false;
         }
     }
     private static final int ARRAY = 10;
@@ -65,7 +74,15 @@ public class Engine {
         }
         return sequence;
     }
-
+    public static String seqWithX(int[] sequence, int x) {
+        String toReplace = " " + sequence[x] + " ";
+        String numbers = Arrays.toString(sequence);
+        numbers = numbers.replace(",", "")
+                .replace("[", " ")
+                .replace("]", " ")
+                .replace(toReplace, " .. ");
+        return ("Question:" + numbers);
+    }
     public static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
@@ -77,5 +94,24 @@ public class Engine {
         }
         return true;
 
+    }
+    public static void gameEngine(String[] array) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(array[0]);
+        System.out.println("Your answer: ");
+        String answer1 = sc.nextLine();
+        if (Engine.check(answer1, array[1])) {
+            System.out.println(array[2]);
+            System.out.println("Your answer: ");
+            String answer2 = sc.nextLine();
+            if (Engine.check(answer2, array[3])) {
+                System.out.println(array[4]);
+                System.out.println("Your answer: ");
+                String answer3 = sc.nextLine();
+                if (Engine.check(answer3, array[5])) {
+                    Greet.congratulate();
+                }
+            }
+        }
     }
 }

@@ -2,39 +2,20 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Greet;
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Progression {
-    private static final double MAX = 3;
+
     public static void playGame() {
         Greet.greeting();
-        Scanner sc = new Scanner(System.in);
         System.out.println("What number is missing in the progression?");
+        var array = new String[6];
 
-        int indexRight = 0;
-
-        while (indexRight < MAX) {
+        for (var i = 0; i < array.length; i = i + 2) {
             int[] seq = Engine.getSequence();
-            int length = seq.length - 1;
-            int missing = Engine.getRandomInt(length);
-            missing = Math.abs(missing);
-            int result = seq[missing];
-            String toReplace = " " + String.valueOf(seq[missing]) + " ";
-            String numbers = Arrays.toString(seq);
-            numbers = numbers.replace(",", "")
-                    .replace("[", " ")
-                    .replace("]", " ")
-                    .replace(toReplace, " .. ");
-            System.out.println("Question:" + numbers);
-            System.out.println("Your answer: ");
-            int answer = sc.nextInt();
-
-            Engine.checkNumber(answer, result);
-            indexRight++;
+            int x = Math.abs(Engine.getRandomInt(seq.length - 1));
+            array[i] = Engine.seqWithX(seq, x);
+            array[i + 1] = Integer.toString(seq[x]);
         }
-        if (indexRight == MAX) {
-            Greet.congratulate();
-        }
+        Engine.gameEngine(array);
     }
 }

@@ -3,33 +3,19 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Greet;
 
-import java.util.Scanner;
-
 public class GCD {
-    private static final double MAX = 3;
     public static void playGame() {
         Greet.greeting();
-        Scanner sc = new Scanner(System.in);
         System.out.println("Find the greatest common divisor of given numbers.");
+        var array = new String[6];
 
-        int indexRight = 0;
-
-        while (indexRight < MAX) {
+        for (var i = 0; i < array.length; i = i + 2) {
             int number1 = Engine.getRandomInt();
             int number2 = Engine.getRandomInt();
-
-            System.out.println("Question: " + number1 + " " + number2);
-            System.out.println("Your answer: ");
-            int answer = sc.nextInt();
-            int result = Engine.getNod(number1, number2);
-
-            Engine.checkNumber(answer, result);
-            indexRight++;
+            array[i] = "Question: " + number1 + " " + number2;
+            array[i + 1] = Integer.toString(Engine.getNod(number1, number2));
         }
-
-        if (indexRight == MAX) {
-            Greet.congratulate();
-        }
+        Engine.gameEngine(array);
     }
 }
 
