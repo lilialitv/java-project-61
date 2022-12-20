@@ -4,13 +4,14 @@ import hexlet.code.Greet;
 import hexlet.code.Engine;
 
 public class Calc {
+    private static final  int NUMBER_OF_ROUNDS = 3;
     public static void playGame() {
         Greet.greeting();
         System.out.println("What is the result of the expression?");
-        var questions = new String[3];
-        var results = new String[3];
+        var questions = new String[NUMBER_OF_ROUNDS];
+        var results = new String[NUMBER_OF_ROUNDS];
 
-        for (var i = 0; i < questions.length; i++) {
+        for (var i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int number1 = Engine.getRandomInt();
             int number2 = Engine.getRandomInt();
             char operation = Engine.getRandomOperation("-+*");
