@@ -95,11 +95,12 @@ public class Engine {
         return true;
 
     }
+    private static final  int NUMBER_OF_ROUNDS = 3;
     public static void gameEngine(String[] questions, String[] results) {
         Scanner sc = new Scanner(System.in);
         System.out.println(questions[0]);
         System.out.println("Your answer: ");
-        var answers = new String[3];
+        var answers = new String[NUMBER_OF_ROUNDS];
         answers[0] = sc.nextLine();
 
         for (var i = 0; Engine.check(answers[i], results[i]) && i < questions.length - 1; i++) {
