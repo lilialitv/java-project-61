@@ -7,12 +7,14 @@ public class Even {
     public static void playGame() {
         Greet.greeting();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        var array = new String[6];
-        for (var i = 0; i < array.length; i = i + 2) {
+        var questions = new String[3];
+        var results = new String[3];
+
+        for (var i = 0; i < questions.length; i++) {
             int random = Engine.getRandomInt();
-            array[i] = "Question: " + random;
-            array[i + 1] = random % 2 == 0 ? "yes" : "no";
+            questions[i] = "Question: " + random;
+            results[i] = random % 2 == 0 ? "yes" : "no";
         }
-        Engine.gameEngine(array);
+        Engine.gameEngine(questions, results);
     }
 }

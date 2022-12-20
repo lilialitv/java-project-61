@@ -48,7 +48,7 @@ public class Engine {
     }
     public static boolean check(String answer, String result) {
         if (result.equals(answer)) {
-            System.out.println("Correct!");
+
             return true;
         } else {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
@@ -95,23 +95,22 @@ public class Engine {
         return true;
 
     }
-    public static void gameEngine(String[] array) {
+    public static void gameEngine(String[] questions, String[] results) {
         Scanner sc = new Scanner(System.in);
-        System.out.println(array[0]);
+        System.out.println(questions[0]);
         System.out.println("Your answer: ");
-        String answer1 = sc.nextLine();
-        if (Engine.check(answer1, array[1])) {
-            System.out.println(array[2]);
-            System.out.println("Your answer: ");
-            String answer2 = sc.nextLine();
-            if (Engine.check(answer2, array[3])) {
-                System.out.println(array[4]);
-                System.out.println("Your answer: ");
-                String answer3 = sc.nextLine();
-                if (Engine.check(answer3, array[5])) {
-                    Greet.congratulate();
-                }
-            }
+        var answers = new String[3];
+        answers[0] = sc.nextLine();
+
+        for (var i = 0; Engine.check(answers[i], results[i]) && i < questions.length - 1; i++) {
+            System.out.println("Correct!");
+            System.out.println(questions[i + 1]);
+            System.out.println("You answer: ");
+            answers[i + 1] = sc.nextLine();
+        }
+        if (Engine.check(answers[2], results[2])) {
+            System.out.println("Correct!");
+            Greet.congratulate();
         }
     }
 }
