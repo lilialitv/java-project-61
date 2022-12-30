@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class GCD {
+
     public static int getNod(int number1, int number2) {
         if (number2 == 0) {
             return number1;
@@ -16,8 +17,8 @@ public class GCD {
         var results = new String[Engine.getNumberOfRounds()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int number1 = Utils.getRandomInt();
-            int number2 = Utils.getRandomInt();
+            int number1 = Utils.getRandomInt(Utils.getDefaultMax());
+            int number2 = Utils.getRandomInt(Utils.getDefaultMax());
             questions[i] = "Question: " + number1 + " " + number2;
             results[i] = Integer.toString(getNod(number1, number2));
         }

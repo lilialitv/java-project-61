@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
+
     public static String count(int number1, int number2, char operation) {
         int result = 0;
         if (operation == '+') {
@@ -21,8 +22,8 @@ public class Calc {
         var results = new String[Engine.getNumberOfRounds()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int number1 = Utils.getRandomInt();
-            int number2 = Utils.getRandomInt();
+            int number1 = Utils.getRandomInt(Utils.getDefaultMax());
+            int number2 = Utils.getRandomInt(Utils.getDefaultMax());
             char operation = Utils.getRandomOperation("-+*");
             questions[i] = "Question: " + number1 + " " + operation + " " + number2;
             results[i] = count(number1, number2, operation);

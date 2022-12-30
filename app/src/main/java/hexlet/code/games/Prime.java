@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Prime {
+
     public static boolean isPrime(int n) {
         if (n <= 1) {
             return false;
@@ -21,7 +22,7 @@ public class Prime {
         var results = new String[Engine.getNumberOfRounds()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int random = Utils.getRandomInt();
+            int random = Utils.getRandomInt(Utils.getDefaultMax());
             questions[i] = "Question: " + random;
             results[i] = isPrime(random) ? "yes" : "no";
         }
