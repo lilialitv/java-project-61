@@ -1,21 +1,22 @@
 package hexlet.code.games;
 
-import hexlet.code.Greet;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Even {
-    public static void playGame() {
-        Greet.greeting();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        var questions = new String[Utils.getNumberOfRounds()];
-        var results = new String[Utils.getNumberOfRounds()];
+    public static String isEven(int number) {
+        return number % 2 == 0 ? "yes" : "no";
+    }
 
-        for (var i = 0; i < Utils.getNumberOfRounds(); i++) {
+    public static void playGame() {
+        var questions = new String[Engine.getNumberOfRounds()];
+        var results = new String[Engine.getNumberOfRounds()];
+
+        for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int random = Utils.getRandomInt();
             questions[i] = "Question: " + random;
-            results[i] = random % 2 == 0 ? "yes" : "no";
+            results[i] = isEven(random);
         }
-        Engine.gameEngine(questions, results);
+        Engine.gameEngine(questions, results, "Answer 'yes' if the number is even, otherwise answer 'no'.");
     }
 }

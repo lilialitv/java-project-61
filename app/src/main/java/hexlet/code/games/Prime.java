@@ -1,7 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Greet;
 import hexlet.code.Utils;
 
 public class Prime {
@@ -18,16 +17,14 @@ public class Prime {
     }
 
     public static void playGame() {
-        Greet.greeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        var questions = new String[Utils.getNumberOfRounds()];
-        var results = new String[Utils.getNumberOfRounds()];
+        var questions = new String[Engine.getNumberOfRounds()];
+        var results = new String[Engine.getNumberOfRounds()];
 
-        for (var i = 0; i < Utils.getNumberOfRounds(); i++) {
+        for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int random = Utils.getRandomInt();
             questions[i] = "Question: " + random;
             results[i] = isPrime(random) ? "yes" : "no";
         }
-        Engine.gameEngine(questions, results);
+        Engine.gameEngine(questions, results, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
     }
 }

@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.Greet;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
@@ -18,18 +17,16 @@ public class Calc {
     }
 
     public static void playGame() {
-        Greet.greeting();
-        System.out.println("What is the result of the expression?");
-        var questions = new String[Utils.getNumberOfRounds()];
-        var results = new String[Utils.getNumberOfRounds()];
+        var questions = new String[Engine.getNumberOfRounds()];
+        var results = new String[Engine.getNumberOfRounds()];
 
-        for (var i = 0; i < Utils.getNumberOfRounds(); i++) {
+        for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int number1 = Utils.getRandomInt();
             int number2 = Utils.getRandomInt();
             char operation = Utils.getRandomOperation("-+*");
             questions[i] = "Question: " + number1 + " " + operation + " " + number2;
             results[i] = count(number1, number2, operation);
         }
-        Engine.gameEngine(questions, results);
+        Engine.gameEngine(questions, results, "What is the result of the expression?");
     }
 }
