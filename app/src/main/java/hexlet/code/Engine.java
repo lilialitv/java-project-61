@@ -16,6 +16,7 @@ public class Engine {
     }
 
     public static boolean check(String answer, String result) {
+
         if (result.equals(answer)) {
             return true;
         } else {
@@ -26,6 +27,7 @@ public class Engine {
     }
 
     public static void gameEngine(String[] questions, String[] results, String task) {
+
         Greet.greeting();
         System.out.println(task);
         Scanner sc = new Scanner(System.in);

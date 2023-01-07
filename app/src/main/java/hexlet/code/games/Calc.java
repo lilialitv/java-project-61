@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class Calc {
 
     public static String count(int number1, int number2, char operation) {
+
         int result = 0;
         if (operation == '+') {
             result = number1 + number2;
@@ -18,6 +19,7 @@ public class Calc {
     }
 
     public static void playGame() {
+
         var questions = new String[Engine.getNumberOfRounds()];
         var results = new String[Engine.getNumberOfRounds()];
 

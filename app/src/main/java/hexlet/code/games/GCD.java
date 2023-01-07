@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class GCD {
 
     public static int getNod(int number1, int number2) {
+
         if (number2 == 0) {
             return number1;
         }
@@ -13,6 +14,7 @@ public class GCD {
     }
 
     public static void playGame() {
+
         var questions = new String[Engine.getNumberOfRounds()];
         var results = new String[Engine.getNumberOfRounds()];
 

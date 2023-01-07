@@ -6,6 +6,7 @@ import hexlet.code.Utils;
 public class Prime {
 
     public static boolean isPrime(int n) {
+
         if (n <= 1) {
             return false;
         }
@@ -18,6 +19,7 @@ public class Prime {
     }
 
     public static void playGame() {
+
         var questions = new String[Engine.getNumberOfRounds()];
         var results = new String[Engine.getNumberOfRounds()];
 
