@@ -5,14 +5,13 @@ import hexlet.code.Utils;
 
 public class Progression {
 
-    private static final int ARRAY = 10;
+    private static final int ELEMENTS_IN_PROGRESSION = 10;
 
-    public static String[] getSequence(int startingNumber, int dif, int length) {
+    public static String[] getSequence(int startingNumber, int dif, char operation, int length) {
 
         String[] strSequence = new String[length];
         int[] sequence = new int[length];
         sequence[0] = startingNumber;
-        char operation = Utils.getRandomOperation("-+");
 
         for (var i = 1; i < sequence.length; i++) {
             if (operation == '-') {
@@ -32,24 +31,25 @@ public class Progression {
 
         sequence[secretElement] = "..";
         String numbersWithSecretElement = String.join(" ", sequence);
-        return ("Question: " + numbersWithSecretElement);
+        return numbersWithSecretElement;
     }
 
     public static void playGame() {
 
-        var questions = new String[Engine.getNumberOfRounds()];
-        var results = new String[Engine.getNumberOfRounds()];
+        String questionsAndResults[][] = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
-            int dif = Utils.getRandomInt(ARRAY);
+            int dif = Utils.getRandomInt(ELEMENTS_IN_PROGRESSION);
             dif = (dif == 0) ? dif : (dif + 1);
             int startingNumber = Utils.getRandomInt(Utils.getDefaultMax());
-            String[] sequence = getSequence(startingNumber, dif, ARRAY);
+            char operation = Utils.getRandomOperation("-+");
+            String[] sequence = getSequence(startingNumber, dif, operation, ELEMENTS_IN_PROGRESSION);
             int secretElementIndex = Math.abs(Utils.getRandomInt(sequence.length - 1));
 
-            results[i] = sequence[secretElementIndex];
-            questions[i] = seqWithSecretElement(sequence, secretElementIndex);
+            questionsAndResults[i][1] = sequence[secretElementIndex];
+            questionsAndResults[i][0] = seqWithSecretElement(sequence, secretElementIndex);
         }
-        Engine.gameEngine(questions, results, "What number is missing in the progression?");
+        String description = "What number is missing in the progression?";
+        Engine.gameEngine(questionsAndResults, description);
     }
 }

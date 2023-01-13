@@ -5,7 +5,7 @@ import hexlet.code.Utils;
 
 public class Calc {
 
-    public static String count(int number1, int number2, char operation) {
+    public static String calculate(int number1, int number2, char operation) {
 
         int result = 0;
         if (operation == '+') {
@@ -20,16 +20,19 @@ public class Calc {
 
     public static void playGame() {
 
-        var questions = new String[Engine.getNumberOfRounds()];
-        var results = new String[Engine.getNumberOfRounds()];
+        String questionsAndResults[][] = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
 
-        for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
+        for (int i = 0; i < Engine.getNumberOfRounds(); i++) {
+
             int number1 = Utils.getRandomInt(Utils.getDefaultMax());
             int number2 = Utils.getRandomInt(Utils.getDefaultMax());
             char operation = Utils.getRandomOperation("-+*");
-            questions[i] = "Question: " + number1 + " " + operation + " " + number2;
-            results[i] = count(number1, number2, operation);
+
+            questionsAndResults[i][0] = number1 + " " + operation + " " + number2;
+            questionsAndResults[i][1] = calculate(number1, number2, operation);
+
         }
-        Engine.gameEngine(questions, results, "What is the result of the expression?");
+        String description = "What is the result of the expression?";
+        Engine.gameEngine(questionsAndResults, description);
     }
 }

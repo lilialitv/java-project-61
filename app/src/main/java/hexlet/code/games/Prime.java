@@ -20,14 +20,14 @@ public class Prime {
 
     public static void playGame() {
 
-        var questions = new String[Engine.getNumberOfRounds()];
-        var results = new String[Engine.getNumberOfRounds()];
+        String questionsAndResults[][] = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int random = Utils.getRandomInt(Utils.getDefaultMax());
-            questions[i] = "Question: " + random;
-            results[i] = isPrime(random) ? "yes" : "no";
+            questionsAndResults[i][0] = "" + random;
+            questionsAndResults[i][1] = isPrime(random) ? "yes" : "no";
         }
-        Engine.gameEngine(questions, results, "Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        Engine.gameEngine(questionsAndResults, description);
     }
 }

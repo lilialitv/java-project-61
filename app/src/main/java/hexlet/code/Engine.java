@@ -6,41 +6,43 @@ public class Engine {
 
     private static final  int NUMBER_OF_ROUNDS = 3;
 
+    private static final int ONE_QUESTION_ONE_ANSWER = 2;
+
+    private static String username;
+
     public static int getNumberOfRounds() {
         return NUMBER_OF_ROUNDS;
     }
 
-    public static void fail() {
-        Greet.tryAgain();
-        System.exit(0);
+    public static int getOneQuestionOneAnswer() {
+        return ONE_QUESTION_ONE_ANSWER;
     }
 
-    public static boolean check(String answer, String result) {
+    public static void gameEngine(String[][] questionsAndResults, String description) {
 
-        if (result.equals(answer)) {
-            return true;
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + result + "'.");
-            fail();
-            return false;
-        }
-    }
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
+        username = myObj.nextLine();
+        System.out.println("Hello, " + username + "!");
+        System.out.println(description);
 
-    public static void gameEngine(String[] questions, String[] results, String task) {
-
-        Greet.greeting();
-        System.out.println(task);
         Scanner sc = new Scanner(System.in);
         var answers = new String[getNumberOfRounds()];
         for (var i = 0; i < getNumberOfRounds(); i++) {
-            System.out.println(questions[i]);
+            System.out.println("Question: " + questionsAndResults[i][0]);
             System.out.println("Your answer: ");
             answers[i] = sc.nextLine();
-            if (check(answers[i], results[i])) {
+
+            if (questionsAndResults[i][1].equals(answers[i])) {
                 System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answers[i] + "' is wrong answer ;(. Correct answer was '" + questionsAndResults[i][1] + "'.");
+                System.out.println("Let's try again, " + username + "!");
+                System.exit(0);
             }
         }
-        Greet.congratulate();
+        System.out.println("Congratulations, " + username + "!");;
     }
+
 }
 

@@ -21,18 +21,18 @@ public class App {
         System.out.println("1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime\n0 - Exit");
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
-        if (choice == GREETING) {
-            Greet.greeting();
-        } else if (choice == EVEN_GAME) {
-            Even.playGame();
-        } else if (choice == CALC_GAME) {
-            Calc.playGame();
-        } else if (choice == GCD_GAME) {
-            GCD.playGame();
-        } else if (choice == PROGRESSION_GAME) {
-            Progression.playGame();
-        } else if (choice == PRIME_GAME) {
-            Prime.playGame();
+        switch (choice) {
+            case GREETING -> {
+                Scanner myObj = new Scanner(System.in);
+                System.out.println("Welcome to the Brain Games!\nMay I have your name?");
+                System.out.println("Hello, " + myObj.nextLine() + "!");
+            }
+            case EVEN_GAME -> Even.playGame();
+            case CALC_GAME -> Calc.playGame();
+            case GCD_GAME -> GCD.playGame();
+            case PROGRESSION_GAME -> Progression.playGame();
+            case PRIME_GAME -> Prime.playGame();
         }
+
     }
 }
