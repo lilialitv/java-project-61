@@ -20,7 +20,7 @@ public class Calc {
 
     public static void playGame() {
 
-        String questionsAndResults[][] = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
+        String[][] questionsAndResults = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
 
         for (int i = 0; i < Engine.getNumberOfRounds(); i++) {
 

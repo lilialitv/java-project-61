@@ -36,7 +36,7 @@ public class Progression {
 
     public static void playGame() {
 
-        String questionsAndResults[][] = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
+        String[][] questionsAndResults = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
 
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int dif = Utils.getRandomInt(ELEMENTS_IN_PROGRESSION);
