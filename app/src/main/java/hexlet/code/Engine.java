@@ -8,8 +8,6 @@ public class Engine {
 
     private static final int ONE_QUESTION_ONE_ANSWER = 2;
 
-    private static String username;
-
     public static int getNumberOfRounds() {
         return NUMBER_OF_ROUNDS;
     }
@@ -22,7 +20,7 @@ public class Engine {
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        username = myObj.nextLine();
+        String username = myObj.nextLine();
         System.out.println("Hello, " + username + "!");
         System.out.println(description);
 
@@ -42,8 +40,6 @@ public class Engine {
                 System.exit(0);
             }
         }
-        System.out.println("Congratulations, " + username + "!");;
+        System.out.println("Congratulations, " + username + "!");
     }
-
 }
-
