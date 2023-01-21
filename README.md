@@ -14,9 +14,4 @@ Brain Games is a set of five console games based on popular mobile brain trainin
 
 Start 'app' to play. You will see a few game options, choose the one you want. Then read the question and type in the answer.
 
-The games are:
-Calculator. Arithmetic expressions to be evaluated.
-Progression. Search for missing numbers in a sequence of numbers.
-Guessing if a number is an even number.
-Finding the Greatest Common Divisor.
-Guessing if a number is a  prime number.
+The games are: calculator (arithmetic expressions), search for missing numbers in a sequence of numbers, guessing if a number is an even number, finding the Greatest Common Divisor, guessing if a number is a  prime number.
