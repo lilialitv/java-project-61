@@ -6,7 +6,6 @@ import hexlet.code.Utils;
 public class Prime {
 
     public static boolean isPrime(int n) {
-
         if (n <= 1) {
             return false;
         }
@@ -19,9 +18,7 @@ public class Prime {
     }
 
     public static void playGame() {
-
         String[][] questionsAndResults = new String[Engine.getNumberOfRounds()][Engine.getOneQuestionOneAnswer()];
-
         for (var i = 0; i < Engine.getNumberOfRounds(); i++) {
             int random = Utils.getRandomInt(Utils.getDefaultMax());
             questionsAndResults[i][0] = "" + random;

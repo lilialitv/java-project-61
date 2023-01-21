@@ -11,13 +11,11 @@ public class Utils {
     }
 
     public static int getRandomInt(int limit) {
-
         Random randomInt = new Random();
         return randomInt.nextInt(limit);
     }
 
     public static char getRandomOperation(String string) {
-
         Random randomChar = new Random();
         int randomIndex = randomChar.nextInt(string.length());
         return string.charAt(randomIndex);

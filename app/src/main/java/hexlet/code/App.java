@@ -23,9 +23,9 @@ public class App {
         int choice = scanner.nextInt();
         switch (choice) {
             case GREETING -> {
-                Scanner myObj = new Scanner(System.in);
+                Scanner scanner2 = new Scanner(System.in);
                 System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-                System.out.println("Hello, " + myObj.nextLine() + "!");
+                System.out.println("Hello, " + scanner2.nextLine() + "!");
             }
             case EVEN_GAME -> Even.playGame();
             case CALC_GAME -> Calc.playGame();
