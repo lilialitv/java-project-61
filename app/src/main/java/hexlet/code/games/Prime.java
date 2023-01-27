@@ -25,6 +25,6 @@ public class Prime {
             questionsAndResults[i][1] = isPrime(random) ? "yes" : "no";
         }
         String description = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        Engine.gameEngine(questionsAndResults, description);
+        Engine.startPlaying(questionsAndResults, description);
     }
 }

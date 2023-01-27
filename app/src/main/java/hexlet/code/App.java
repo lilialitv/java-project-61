@@ -5,6 +5,7 @@ import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
+import hexlet.code.Cli;
 import java.util.Scanner;
 
 public class App {
@@ -22,11 +23,7 @@ public class App {
         System.out.println("Your choice: ");
         int choice = scanner.nextInt();
         switch (choice) {
-            case GREETING -> {
-                Scanner scanner2 = new Scanner(System.in);
-                System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-                System.out.println("Hello, " + scanner2.nextLine() + "!");
-            }
+            case GREETING -> Cli.greeting();
             case EVEN_GAME -> Even.playGame();
             case CALC_GAME -> Calc.playGame();
             case GCD_GAME -> GCD.playGame();

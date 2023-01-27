@@ -21,7 +21,7 @@ public class GCD {
             questionsAndResults[i][1] = Integer.toString(getGCD(number1, number2));
         }
         String description = "Find the greatest common divisor of given numbers.";
-        Engine.gameEngine(questionsAndResults, description);
+        Engine.startPlaying(questionsAndResults, description);
     }
 }
 

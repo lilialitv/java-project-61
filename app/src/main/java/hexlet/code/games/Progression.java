@@ -43,6 +43,6 @@ public class Progression {
             questionsAndResults[i][0] = seqWithSecretElement(sequence, secretElementIndex);
         }
         String description = "What number is missing in the progression?";
-        Engine.gameEngine(questionsAndResults, description);
+        Engine.startPlaying(questionsAndResults, description);
     }
 }

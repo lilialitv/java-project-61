@@ -17,6 +17,6 @@ public class Even {
             questionsAndResults[i][1] = isEven(random) ? "yes" : "no";
         }
         String description = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        Engine.gameEngine(questionsAndResults, description);
+        Engine.startPlaying(questionsAndResults, description);
     }
 }

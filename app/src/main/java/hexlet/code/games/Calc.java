@@ -27,6 +27,6 @@ public class Calc {
             questionsAndResults[i][1] = calculate(number1, number2, operation);
         }
         String description = "What is the result of the expression?";
-        Engine.gameEngine(questionsAndResults, description);
+        Engine.startPlaying(questionsAndResults, description);
     }
 }
