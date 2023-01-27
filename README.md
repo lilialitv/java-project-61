@@ -12,6 +12,6 @@ https://asciinema.org/a/zZamwOogyfyJrf9YxJoA0fHex
 
 Brain Games is a set of five console games based on popular mobile brain training apps. Each game asks questions that need to be answered correctly. After three correct answers, the game is considered to be completed. If you give a wrong answer the game will end and you can play it again.
 
-Start 'app' to play. You will see a few game options, choose the one you want. Then read the question and type in the answer.
+Use "make run-dist" command in your console to start the app. Then you will see a few game options, choose the one you want. Then read the question and type in the answer.
 
 The games are: calculator (arithmetic expressions), search for missing numbers in a sequence of numbers, guessing if a number is an even number, finding the Greatest Common Divisor, guessing if a number is a  prime number.
